@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
+  root 'pages#home'
 
+  devise_for :players, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
 
-  get '/home', to: 'pages#home'
-  get '/tutorial', to: 'pages#tutorial'
+  get '/welcome', to: 'players#index'
+  get 'players/:id', to: 'players#show'
   get '/lobby', to: 'pages#lobby'
   get '/arena', to: 'pages#arena'
-  get '/welcome', to: 'players#index'
-  get '/leaderboard', to: 'records#index'
+  get '/rankings', to: 'records#index'
+  get '/tutorial', to: 'pages#tutorial'
 
-  resources :players, except: [:index]
 
 end

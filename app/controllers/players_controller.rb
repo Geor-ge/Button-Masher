@@ -1,29 +1,15 @@
 class PlayersController < ApplicationController
 
+  before_action :authenticate_player!, except: [:new, :create]
+
   def index
     @players = Player.all
   end
 
   def show
+    @player = Player.find(params[:id])
   end
 
-  def edit
-  end
-
-  def update
-  end
-
-  def new
-    @player = Player.new
-  end
-
-  def create
-    @player = Player.new(player_params)
-    if @player.valid?
-      @player.save
-      redirect_to "/welcome"
-    end
-  end
 
   def destroy
   end

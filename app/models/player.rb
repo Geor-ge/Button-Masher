@@ -1,8 +1,6 @@
 class Player < ApplicationRecord
-  has_many :records
-
-
-  validates :email, presence: true
-  validates :user_name, presence: true
-  validates :password, presence: true
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 end
