@@ -20,18 +20,86 @@
   };
 
   var game = new Phaser.Game(config);
+  var player1;
+  var player2;
+
+  var lp;
+  var mp;
+  var hp;
+  var lk;
+  var mk;
+  var hk;
+
+
+
 
   function preload ()
   {
     this.load.image('stage', '<%= image_path('chikara-temple.jpg')%>');
+    this.load.image('p1', '<%= image_path('idleP1.png')%>');
+    this.load.image('p2', '<%= image_path('idleP2.png')%>');
+    this.load.spritesheet('p1lp', '<%= image_path('p1lp.png')%>', {frameWidth: 420, frameHeight: 638});
+    this.load.spritesheet('p1mp', '<%= image_path('p1mp.png')%>', {frameWidth: 429, frameHeight: 639});
+    this.load.spritesheet('p1hp', '<%= image_path('p1hp.png')%>', {frameWidth: 422, frameHeight: 641});
+    this.load.spritesheet('p1lk', '<%= image_path('p1lk.png')%>', {frameWidth: 420, frameHeight: 638});
+    this.load.spritesheet('p1mk', '<%= image_path('p1mk.png')%>', {frameWidth: 420, frameHeight: 638});
+    this.load.spritesheet('p1hk', '<%= image_path('p1hk.png')%>', {frameWidth: 420, frameHeight: 638});
+
   }
 
   function create ()
   {
+
     this.add.image(450,300, 'stage').setScale(.25, .2);
+    player1 = this.add.sprite(100,480, 'p1').setScale(.3);
+    player2 = this.add.sprite(800,480, 'p2').setScale(.3);
+    this.anims.create(
+    {
+      key: 'p1lp',
+      frames: this.anims.generateFrameNumbers('p1lp', { start: 0, end: 1 }),
+      framerate: 5,
+      repeat: -1
+    });
+
+    this.anims.create(
+    {
+      key: 'p1mp',
+      frames: this.anims.generateFrameNumbers('p1mp', { start: 0, end: 2 }),
+      framerate: 5,
+      repeat: -1
+    });
+
+    this.anims.create(
+    {
+      key: 'p1hp',
+      frames: this.anims.generateFrameNumbers('p1hp', { start: 0, end: 4 }),
+      framerate: 5,
+      repeat: -1
+    });
+
+
   }
+
+
+
 
   function update ()
   {
+
+    keys = this.input.keyboard.addKeys('A, S, D, Z, X, C');
+
+     if (keys.A.isDown){
+      player1.anims.play('p1lp');
+    }else if(keys.S.isDown){
+      player1.anims.play('p1mp')
+    }else if (keys.D.isDown) {
+      player1.anims.play('p1hp')
+    }else {
+      player1.anims.stop('p1')
+    };
+
+
+
+
   }
 </script>

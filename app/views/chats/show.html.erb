@@ -1,0 +1,58 @@
+<div id="arena">
+</div>
+<script type="text/javascript">
+  var config = {
+    type: Phaser.AUTO,
+    width: 900,
+    height: 600,
+    physics: {
+      default: 'arcade',
+      arcade: {
+        gravity: { y: 300 },
+        debug: false
+      }
+    },
+    scene: {
+      preload: preload,
+      create: create,
+      update: update
+    }
+  };
+
+  var game = new Phaser.Game(config);
+  var player1;
+  var player2;
+
+
+  function preload ()
+  {
+    this.load.image('stage', '<%= image_path('chikara-temple.jpg')%>');
+    this.load.image('p1', '<%= image_path('idleP1.png')%>');
+    this.load.image('p2', '<%= image_path('idleP2.png')%>');
+    this.load.multiatlas('lpP1', '<%= image_path('lpP1.json')%>');
+  }
+
+  function create ()
+  {
+
+    this.add.image(450,300, 'stage').setScale(.25, .2);
+    player1 = this.add.sprite(100,480, 'p1').setScale(.3);
+    player2 = this.add.sprite(800,480, 'p2').setScale(.3);
+
+  }
+
+  function update ()
+  {
+
+
+    cursors = this.input.keyboard.createCursorKeys();
+
+    if (cursors.right.isDown && cursors.left.isDown) {
+
+    } else if (cursors.left.isDown) {
+      player1.x -= 3;
+    }else if (cursors.right.isDown) {
+      player1.x += 3;
+    }
+  }
+</script>

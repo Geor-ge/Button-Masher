@@ -1,0 +1,83 @@
+{
+	"textures": [
+		{
+			"image": "p1lk.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 425,
+				"h": 1781
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "l_kick/03.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 415,
+						"h": 542
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 415,
+						"h": 542
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 415,
+						"h": 542
+					}
+				},
+				{
+					"filename": "l_kick/02.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 423,
+						"h": 592
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 423,
+						"h": 592
+					},
+					"frame": {
+						"x": 1,
+						"y": 545,
+						"w": 423,
+						"h": 592
+					}
+				},
+				{
+					"filename": "l_kick/01.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 373,
+						"h": 641
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 373,
+						"h": 641
+					},
+					"frame": {
+						"x": 1,
+						"y": 1139,
+						"w": 373,
+						"h": 641
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:f711695a6a41c6e25d787fb5b98c23de:677a22865ec4867d2f8fc3338b5cb4c0:3de83bee21c0c343f233ed4e21b01a0b$"
+	}
+}
