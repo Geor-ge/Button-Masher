@@ -31,6 +31,27 @@
 					}
 				},
 				{
+					"filename": "p2punch/10.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 373,
+						"h": 640
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 373,
+						"h": 640
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 373,
+						"h": 640
+					}
+				},
+				{
 					"filename": "p2punch/02.png",
 					"rotated": false,
 					"trimmed": false,
@@ -115,7 +136,49 @@
 					}
 				},
 				{
+					"filename": "p2punch/09.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 373,
+						"h": 641
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 373,
+						"h": 641
+					},
+					"frame": {
+						"x": 1,
+						"y": 644,
+						"w": 373,
+						"h": 641
+					}
+				},
+				{
 					"filename": "p2punch/06.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 389,
+						"h": 638
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 389,
+						"h": 638
+					},
+					"frame": {
+						"x": 376,
+						"y": 644,
+						"w": 389,
+						"h": 638
+					}
+				},
+				{
+					"filename": "p2punch/08.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -162,6 +225,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:066113d7bc1a9e8c06147e01bf5747e2:75edf7182c21923ef9bb90d056ebca81:8e881204a635f7fee57f9f67da0e85b7$"
+		"smartupdate": "$TexturePacker:SmartUpdate:de5fc6024b0e92567d94c79c3dbdcbea:66c3a381762a3efc2e3f3ed36d88926d:8e881204a635f7fee57f9f67da0e85b7$"
 	}
 }
