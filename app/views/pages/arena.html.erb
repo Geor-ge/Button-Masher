@@ -22,7 +22,6 @@
   var game = new Phaser.Game(config);
   var player1;
   var player2;
-  var ground;
 
 
 
@@ -48,22 +47,10 @@
     player2 = this.physics.add.sprite(800,455, 'p2punch', 'p2punch/01.png').setScale(.3);
     player1 = this.physics.add.sprite(100,455, 'p1punch', 'p1punch/01.png').setScale(.3);
 
-    player1.body.setCollideWorldBounds(true);
-    player2.body.setCollideWorldBounds(true);
 
-    this.anims.create(
-    {
-      key: 'p1idle',
-      frames: this.anims.generateFrameNames('p1punch', {
-        prefix: 'p1punch/',
-        suffix: '.png',
-        start: 1,
-        end: 1,
-        zeroPad: 2
-      }),
-      framerate: 10,
-      repeat: 0
-    });
+    player1.body.setVelocity(0, 0).setCollideWorldBounds(true);
+    player2.body.setVelocity(0, 0).setCollideWorldBounds(true);
+
 
     this.anims.create(
     {
@@ -75,7 +62,6 @@
         end: 10,
         zeroPad: 2
       }),
-      framerate: 10,
       repeat: 0
     });
 
@@ -89,7 +75,6 @@
         end: 9,
         zeroPad: 2
       }),
-      framerate: 5,
       repeat: 0
     });
 
@@ -103,8 +88,7 @@
         end: 9,
         zeroPad: 2
       }),
-      framerate: 1,
-      repeat: 0
+      repeat: -1
     });
 
     this.anims.create(
@@ -117,8 +101,7 @@
         end: 9,
         zeroPad: 2
       }),
-      framerate: 9,
-      repeat: 1
+      repeat: -1
     });
 
     this.anims.create(
@@ -131,7 +114,6 @@
         end: 10,
         zeroPad: 2
       }),
-      framerate: 10,
       repeat: 0
     });
 
@@ -145,7 +127,6 @@
         end: 9,
         zeroPad: 2
       }),
-      framerate: 9,
       repeat: 0
     });
 
@@ -159,7 +140,6 @@
         end: 9,
         zeroPad: 2
       }),
-      framerate: 9,
       repeat: -1
     });
 
@@ -173,10 +153,8 @@
         end: 9,
         zeroPad: 2
       }),
-      framerate: 9,
       repeat: -1
     });
-
 
 
   }
@@ -186,39 +164,36 @@
   {
 
     this.physics.world.collide(player1, player2);
-    this.physics.world.collide(player2, player1);
     keys = this.input.keyboard.addKeys('D, C, I, K, O, P');
     cursors = this.input.keyboard.createCursorKeys();
 
-
-    if (cursors.right.isDown) {
-      player1.setVelocityX(150);
+    if(cursors.right.isDown) {
+      player1.setVelocityX(300);
       player1.anims.play('p1front');
-    }else if (cursors.left.isDown){
+    }else if(cursors.left.isDown){
       player1.anims.play('p1back');
-      player1.setVelocityX(-150);
-    }else if (keys.D.isDown){
+      player1.setVelocityX(-300);
+    }else if(keys.D.isDown){
+      player1.setVelocityX(0);
       player1.anims.play('p1punch');
     }else if(keys.C.isDown){
-      player1.anims.play('p1kick')
-    };
+      player1.setVelocityX(0);
+      player1.anims.play('p1kick');
+    }
 
-    if (keys.P.isDown) {
-      player2.setVelocityX(200);
+    if (keys.O.isDown) {
+      player2.setVelocityX(-300);
       player2.anims.play('p2front');
-    }else if (keys.O.isDown){
-      player2.setVelocityX(-200);
+    }else if (keys.P.isDown){
+      player2.setVelocityX(300);
       player2.anims.play('p2back');
     }else if (keys.I.isDown){
+      player2.setVelocityX(0);
       player2.anims.play('p2punch');
     }else if(keys.K.isDown){
-      player2.anims.play('p2kick')
-    }else {
       player2.setVelocityX(0);
-    };
-
-
-
+      player2.anims.play('p2kick');
+    }
 
   }
 </script>
