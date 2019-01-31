@@ -1,5 +1,3 @@
-<div id="arena">
-</div>
 <script type="text/javascript">
   var config = {
     type: Phaser.AUTO,
@@ -9,7 +7,7 @@
       default: 'arcade',
       arcade: {
         gravity: { y: 300 },
-        debug: true
+        debug: false
       }
     },
     scene: {
@@ -25,42 +23,72 @@
   var p1health = 100;
   var p2health = 100;
 
-  var winner;
-
 
 
   function preload ()
   {
     this.load.image('stage', '<%= image_path('chikara-temple.jpg')%>');
-    this.load.atlas('p1punch', '<%= image_path('p1punch.png')%>', '<%= asset_path('p1punch.json')%>');
-    this.load.atlas('p1kick', '<%= image_path('p1kick.png')%>', '<%= asset_path('p1kick.json')%>');
-    this.load.atlas('p1front', '<%= image_path('p1front.png')%>', '<%= asset_path('p1front.json')%>');
-    this.load.atlas('p1back', '<%= image_path('p1back.png')%>', '<%= asset_path('p1back.json')%>');
-    this.load.atlas('p2punch', '<%= image_path('p2punch.png')%>', '<%= asset_path('p2punch.json')%>');
-    this.load.atlas('p2kick', '<%= image_path('p2kick.png')%>', '<%= asset_path('p2kick.json')%>');
-    this.load.atlas('p2front', '<%= image_path('p2front.png')%>', '<%= asset_path('p2front.json')%>');
-    this.load.atlas('p2back', '<%= image_path('p2back.png')%>', '<%= asset_path('p2back.json')%>');
+    this.load.atlas('p1lp', '<%= image_path('p1lp.png')%>', '<%= asset_path('p1lp.json')%>');
+    this.load.atlas('p1mp', '<%= image_path('p1mp.png')%>', '<%= asset_path('p1mp.json')%>');
+    this.load.atlas('p1hp', '<%= image_path('p1hp.png')%>', '<%= asset_path('p1hp.json')%>');
+    this.load.atlas('p1lk', '<%= image_path('p1lk.png')%>', '<%= asset_path('p1lk.json')%>');
+    this.load.atlas('p1mk', '<%= image_path('p1mk.png')%>', '<%= asset_path('p1mk.json')%>');
+    this.load.atlas('p1hk', '<%= image_path('p1hk.png')%>', '<%= asset_path('p1hk.json')%>');
+    this.load.atlas('p2lp', '<%= image_path('p2lp.png')%>', '<%= asset_path('p2lp.json')%>');
+    this.load.atlas('p2mp', '<%= image_path('p2mp.png')%>', '<%= asset_path('p2mp.json')%>');
+    this.load.atlas('p2hp', '<%= image_path('p2hp.png')%>', '<%= asset_path('p2hp.json')%>');
+    this.load.atlas('p2lk', '<%= image_path('p2lk.png')%>', '<%= asset_path('p2lk.json')%>');
+    this.load.atlas('p2mk', '<%= image_path('p2mk.png')%>', '<%= asset_path('p2mk.json')%>');
+    this.load.atlas('p2hk', '<%= image_path('p2hk.png')%>', '<%= asset_path('p2hk.json')%>');
   }
 
 
   function create ()
   {
 
-
     this.add.image(450,300, 'stage').setScale(.25, .2);
-    player1 = this.physics.add.sprite(390,455, 'p1punch', 'p1punch/01.png').setScale(.3);
-    player2 = this.physics.add.sprite(500,455, 'p2punch', 'p2punch/01.png').setScale(.3);
+    player1 = this.physics.add.sprite(395,455, 'p1hp', 'p1hp/01.png').setScale(.3);
+    player2 = this.physics.add.sprite(500,455, 'p2hp', 'p2hp/01.png').setScale(.3);
 
 
-    player1.body.setVelocity(0, 0).setCollideWorldBounds(true);
-    player2.body.setVelocity(0, 0).setCollideWorldBounds(true);
+    player1.body.setCollideWorldBounds(true);
+    player2.body.setCollideWorldBounds(true);
 
 
     this.anims.create(
     {
-      key: 'p1punch',
-      frames: this.anims.generateFrameNames('p1punch', {
-        prefix: 'p1punch/',
+      key: 'p1lp',
+      frames: this.anims.generateFrameNames('p1lp', {
+        prefix: 'p1lp/',
+        suffix: '.png',
+        start: 1,
+        end: 5,
+        zeroPad: 2
+      }),
+      frameRate: 20,
+      repeat: 0
+    });
+
+
+    this.anims.create(
+    {
+      key: 'p1mp',
+      frames: this.anims.generateFrameNames('p1mp', {
+        prefix: 'p1mp/',
+        suffix: '.png',
+        start: 1,
+        end: 5,
+        zeroPad: 2
+      }),
+      frameRate: 20,
+      repeat: 0
+    });
+
+    this.anims.create(
+    {
+      key: 'p1hp',
+      frames: this.anims.generateFrameNames('p1hp', {
+        prefix: 'p1hp/',
         suffix: '.png',
         start: 1,
         end: 10,
@@ -70,11 +98,12 @@
       repeat: 0
     });
 
+
     this.anims.create(
     {
-      key: 'p1kick',
-      frames: this.anims.generateFrameNames('p1kick', {
-        prefix: 'p1kick/',
+      key: 'p1mk',
+      frames: this.anims.generateFrameNames('p1mk', {
+        prefix: 'p1mk/',
         suffix: '.png',
         start: 1,
         end: 9,
@@ -84,12 +113,55 @@
       repeat: 0
     });
 
+    this.anims.create(
+    {
+      key: 'p1hk',
+      frames: this.anims.generateFrameNames('p1hk', {
+        prefix: 'p1hk/',
+        suffix: '.png',
+        start: 1,
+        end: 6,
+        zeroPad: 2
+      }),
+      frameRate: 14,
+      repeat: 0
+    });
+
 
     this.anims.create(
     {
-      key: 'p2punch',
-      frames: this.anims.generateFrameNames('p2punch', {
-        prefix: 'p2punch/',
+      key: 'p2lp',
+      frames: this.anims.generateFrameNames('p2lp', {
+        prefix: 'p2lp/',
+        suffix: '.png',
+        start: 1,
+        end: 5,
+        zeroPad: 2
+      }),
+      frameRate: 20,
+      repeat: 0
+    });
+
+
+    this.anims.create(
+    {
+      key: 'p2mp',
+      frames: this.anims.generateFrameNames('p2mp', {
+        prefix: 'p2mp/',
+        suffix: '.png',
+        start: 1,
+        end: 5,
+        zeroPad: 2
+      }),
+      frameRate: 20,
+      repeat: 0
+    });
+
+    this.anims.create(
+    {
+      key: 'p2hp',
+      frames: this.anims.generateFrameNames('p2hp', {
+        prefix: 'p2hp/',
         suffix: '.png',
         start: 1,
         end: 10,
@@ -99,11 +171,12 @@
       repeat: 0
     });
 
+
     this.anims.create(
     {
-      key: 'p2kick',
-      frames: this.anims.generateFrameNames('p2kick', {
-        prefix: 'p2kick/',
+      key: 'p2mk',
+      frames: this.anims.generateFrameNames('p2mk', {
+        prefix: 'p2mk/',
         suffix: '.png',
         start: 1,
         end: 9,
@@ -112,6 +185,21 @@
       frameRate: 30,
       repeat: 0
     });
+
+    this.anims.create(
+    {
+      key: 'p2hk',
+      frames: this.anims.generateFrameNames('p2hk', {
+        prefix: 'p2hk/',
+        suffix: '.png',
+        start: 1,
+        end: 6,
+        zeroPad: 2
+      }),
+      frameRate: 14,
+      repeat: 0
+    });
+
 
 
     player1.on('animationcomplete', p2damage)
@@ -122,21 +210,32 @@
   function update ()
   {
 
-    keys = this.input.keyboard.addKeys('A, S, D, Z, X, C');
-
+    keys = this.input.keyboard.addKeys('A, S, D, Z, X, C, I, O, P, J, K, L');
 
     if (player1.anims.isPlaying) {
-    }else if(Phaser.Input.Keyboard.JustDown(keys.D)) {
-      player1.anims.play('p1punch');
+    }else if(Phaser.Input.Keyboard.JustDown(keys.A)) {
+      player1.anims.play('p1lp');
+    }else if(Phaser.Input.Keyboard.JustDown(keys.S)){
+      player1.anims.play('p1mp');
+    }else if(Phaser.Input.Keyboard.JustDown(keys.D)){
+      player1.anims.play('p1hp');
+    }else if(Phaser.Input.Keyboard.JustDown(keys.X)){
+      player1.anims.play('p1mk');
     }else if(Phaser.Input.Keyboard.JustDown(keys.C)){
-      player1.anims.play('p1kick');
+      player1.anims.play('p1hk');
     }
 
-    if (player2.anims.isPlaying){
-    }else if(Phaser.Input.Keyboard.JustDown(keys.Z)){
-      player2.anims.play('p2punch');
-    }else if(Phaser.Input.Keyboard.JustDown(keys.X)){
-      player2.anims.play('p2kick');
+    if (player2.anims.isPlaying) {
+    }else if(Phaser.Input.Keyboard.JustDown(keys.I)) {
+      player2.anims.play('p2lp');
+    }else if(Phaser.Input.Keyboard.JustDown(keys.O)){
+      player2.anims.play('p2mp');
+    }else if(Phaser.Input.Keyboard.JustDown(keys.P)){
+      player2.anims.play('p2hp');
+    }else if(Phaser.Input.Keyboard.JustDown(keys.K)){
+      player2.anims.play('p2mk');
+    }else if(Phaser.Input.Keyboard.JustDown(keys.L)){
+      player2.anims.play('p2hk');
     }
 
   }
@@ -149,8 +248,10 @@
       player1.tint = 0xff6666;
     }else if(p1health < 25 && p1health >= 15) {
       player1.tint = 0xff3333;
-    }else if (p1health < 15){
+    }else if (p1health < 15 && p1health > 0){
       player1.tint = 0xff0000;
+    }else if(p1health <= 0){
+      alert('Player 2 WINS!')
     }
   }
   function p2damage() {
@@ -160,12 +261,12 @@
       player2.tint = 0xff6666;
     }else if(p2health < 25 && p2health >= 15) {
       player2.tint = 0xff3333;
-    }else if (p2health < 15){
+    }else if (p2health < 15 && p2health > 0){
       player2.tint = 0xff0000;
+    }else if(p2health <= 0){
+      alert('Player 1 WINS!');
     }
   }
-
-
 
 
 </script>

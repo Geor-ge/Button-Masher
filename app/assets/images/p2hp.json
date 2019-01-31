@@ -1,184 +1,241 @@
 {
 	"textures": [
 		{
-			"image": "p1punch.png",
+			"image": "p2hp.png",
 			"format": "RGBA8888",
 			"size": {
-				"w": 1946,
-				"h": 1285
+				"w": 1957,
+				"h": 1286
 			},
 			"scale": 1,
 			"frames": [
 				{
-					"filename": "p1punch/01.png",
+					"filename": "p2hp/01.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
 						"w": 373,
-						"h": 638
+						"h": 640
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
 						"w": 373,
-						"h": 638
+						"h": 640
 					},
 					"frame": {
 						"x": 1,
 						"y": 1,
 						"w": 373,
-						"h": 638
+						"h": 640
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
 					}
 				},
 				{
-					"filename": "p1punch/02.png",
+					"filename": "p2hp/02.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 384,
+						"w": 386,
 						"h": 639
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 384,
+						"w": 386,
 						"h": 639
 					},
 					"frame": {
 						"x": 376,
 						"y": 1,
-						"w": 384,
+						"w": 386,
 						"h": 639
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
 					}
 				},
 				{
-					"filename": "p1punch/03.png",
+					"filename": "p2hp/03.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 420,
-						"h": 638
+						"w": 419,
+						"h": 641
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 420,
-						"h": 638
+						"w": 419,
+						"h": 641
 					},
 					"frame": {
-						"x": 762,
+						"x": 764,
 						"y": 1,
-						"w": 420,
-						"h": 638
+						"w": 419,
+						"h": 641
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
 					}
 				},
 				{
-					"filename": "p1punch/04.png",
+					"filename": "p2hp/04.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 384,
-						"h": 639
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 384,
-						"h": 639
-					},
-					"frame": {
-						"x": 1184,
-						"y": 1,
-						"w": 384,
-						"h": 639
-					}
-				},
-				{
-					"filename": "p1punch/05.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 373,
+						"w": 386,
 						"h": 640
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 373,
+						"w": 386,
 						"h": 640
 					},
 					"frame": {
-						"x": 1570,
+						"x": 1185,
 						"y": 1,
-						"w": 373,
+						"w": 386,
 						"h": 640
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
 					}
 				},
 				{
-					"filename": "p1punch/06.png",
+					"filename": "p2hp/05.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 384,
-						"h": 639
+						"w": 373,
+						"h": 641
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 384,
-						"h": 639
+						"w": 373,
+						"h": 641
+					},
+					"frame": {
+						"x": 1573,
+						"y": 1,
+						"w": 373,
+						"h": 641
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "p2hp/06.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 389,
+						"h": 638
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 389,
+						"h": 638
 					},
 					"frame": {
 						"x": 1,
-						"y": 643,
-						"w": 384,
-						"h": 639
+						"y": 644,
+						"w": 389,
+						"h": 638
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
 					}
 				},
 				{
-					"filename": "p1punch/07.png",
+					"filename": "p2hp/07.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 422,
+						"w": 423,
 						"h": 641
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 422,
+						"w": 423,
 						"h": 641
 					},
 					"frame": {
-						"x": 387,
-						"y": 643,
-						"w": 422,
+						"x": 392,
+						"y": 644,
+						"w": 423,
 						"h": 641
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
 					}
 				},
 				{
-					"filename": "p1punch/08.png",
+					"filename": "p2hp/08.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 384,
-						"h": 639
+						"w": 389,
+						"h": 638
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 384,
-						"h": 639
+						"w": 389,
+						"h": 638
 					},
 					"frame": {
-						"x": 811,
-						"y": 643,
-						"w": 384,
-						"h": 639
+						"x": 817,
+						"y": 644,
+						"w": 389,
+						"h": 638
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
 					}
 				},
 				{
-					"filename": "p1punch/09.png",
+					"filename": "p2hp/09.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 373,
+						"h": 641
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 373,
+						"h": 641
+					},
+					"frame": {
+						"x": 1208,
+						"y": 644,
+						"w": 373,
+						"h": 641
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "p2hp/10.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -192,31 +249,14 @@
 						"h": 640
 					},
 					"frame": {
-						"x": 1197,
-						"y": 643,
+						"x": 1583,
+						"y": 644,
 						"w": 373,
 						"h": 640
-					}
-				},
-				{
-					"filename": "p1punch/10.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 373,
-						"h": 638
 					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 373,
-						"h": 638
-					},
-					"frame": {
-						"x": 1572,
-						"y": 643,
-						"w": 373,
-						"h": 638
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
 					}
 				}
 			]
@@ -225,6 +265,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:454740601ef4d1bb3af8909c6fd521a3:9af68b695f9515caaf697dfa8110f959:440802a4b8b31e7419448f5c28f4f8f7$"
+		"smartupdate": "$TexturePacker:SmartUpdate:bb18ab109afafe651e36708bb96aadb7:66c3a381762a3efc2e3f3ed36d88926d:8b2add37d84a5e881202211f3a8459b0$"
 	}
 }

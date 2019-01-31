@@ -16,3 +16,8 @@
  body{
    margin: 0;
  }
+
+ #arena{
+   display: grid;
+   justify-content: center;
+ }

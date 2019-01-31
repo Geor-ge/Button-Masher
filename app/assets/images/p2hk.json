@@ -1,0 +1,170 @@
+{
+	"textures": [
+		{
+			"image": "p2hk.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1016,
+				"h": 1932
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "p2hk/01.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 382,
+						"h": 643
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 382,
+						"h": 643
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 382,
+						"h": 643
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "p2hk/02.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 268,
+						"h": 664
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 268,
+						"h": 664
+					},
+					"frame": {
+						"x": 385,
+						"y": 1,
+						"w": 268,
+						"h": 664
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "p2hk/03.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 360,
+						"h": 648
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 360,
+						"h": 648
+					},
+					"frame": {
+						"x": 655,
+						"y": 1,
+						"w": 360,
+						"h": 648
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "p2hk/04.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 506,
+						"h": 533
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 506,
+						"h": 533
+					},
+					"frame": {
+						"x": 1,
+						"y": 667,
+						"w": 506,
+						"h": 533
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 1
+					}
+				},
+				{
+					"filename": "p2hk/05.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 411,
+						"h": 622
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 411,
+						"h": 622
+					},
+					"frame": {
+						"x": 509,
+						"y": 667,
+						"w": 411,
+						"h": 622
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 1
+					}
+				},
+				{
+					"filename": "p2hk/06.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 373,
+						"h": 640
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 373,
+						"h": 640
+					},
+					"frame": {
+						"x": 1,
+						"y": 1291,
+						"w": 373,
+						"h": 640
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:fdfb8e3662563ab70da5353c3b6bcb34:6c27ed0196fa8b89d2e082e9df169100:d35b895fc471056dbafe1379fde6877b$"
+	}
+}
