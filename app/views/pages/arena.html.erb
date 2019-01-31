@@ -9,7 +9,7 @@
       default: 'arcade',
       arcade: {
         gravity: { y: 300 },
-        debug: false
+        debug: true
       }
     },
     scene: {
@@ -22,6 +22,10 @@
   var game = new Phaser.Game(config);
   var player1;
   var player2;
+  var p1health = 100;
+  var p2health = 100;
+
+  var winner;
 
 
 
@@ -42,10 +46,10 @@
   function create ()
   {
 
-    this.add.image(450,300, 'stage').setScale(.25, .2);
 
-    player2 = this.physics.add.sprite(800,455, 'p2punch', 'p2punch/01.png').setScale(.3);
-    player1 = this.physics.add.sprite(100,455, 'p1punch', 'p1punch/01.png').setScale(.3);
+    this.add.image(450,300, 'stage').setScale(.25, .2);
+    player1 = this.physics.add.sprite(390,455, 'p1punch', 'p1punch/01.png').setScale(.3);
+    player2 = this.physics.add.sprite(500,455, 'p2punch', 'p2punch/01.png').setScale(.3);
 
 
     player1.body.setVelocity(0, 0).setCollideWorldBounds(true);
@@ -62,6 +66,7 @@
         end: 10,
         zeroPad: 2
       }),
+      frameRate: 30,
       repeat: 0
     });
 
@@ -75,34 +80,10 @@
         end: 9,
         zeroPad: 2
       }),
+      frameRate: 30,
       repeat: 0
     });
 
-    this.anims.create(
-    {
-      key: 'p1front',
-      frames: this.anims.generateFrameNames('p1front', {
-        prefix: 'p1front/',
-        suffix: '.png',
-        start: 0,
-        end: 9,
-        zeroPad: 2
-      }),
-      repeat: -1
-    });
-
-    this.anims.create(
-    {
-      key: 'p1back',
-      frames: this.anims.generateFrameNames('p1back', {
-        prefix: 'p1back/',
-        suffix: '.png',
-        start: 1,
-        end: 9,
-        zeroPad: 2
-      }),
-      repeat: -1
-    });
 
     this.anims.create(
     {
@@ -114,6 +95,7 @@
         end: 10,
         zeroPad: 2
       }),
+      frameRate: 30,
       repeat: 0
     });
 
@@ -127,73 +109,63 @@
         end: 9,
         zeroPad: 2
       }),
+      frameRate: 30,
       repeat: 0
     });
 
-    this.anims.create(
-    {
-      key: 'p2front',
-      frames: this.anims.generateFrameNames('p2front', {
-        prefix: 'p2front/',
-        suffix: '.png',
-        start: 1,
-        end: 9,
-        zeroPad: 2
-      }),
-      repeat: -1
-    });
 
-    this.anims.create(
-    {
-      key: 'p2back',
-      frames: this.anims.generateFrameNames('p2back', {
-        prefix: 'p2back/',
-        suffix: '.png',
-        start: 1,
-        end: 9,
-        zeroPad: 2
-      }),
-      repeat: -1
-    });
-
-
+    player1.on('animationcomplete', p2damage)
+    player2.on('animationcomplete', p1damage)
   }
 
 
   function update ()
   {
 
-    this.physics.world.collide(player1, player2);
-    keys = this.input.keyboard.addKeys('D, C, I, K, O, P');
-    cursors = this.input.keyboard.createCursorKeys();
+    keys = this.input.keyboard.addKeys('A, S, D, Z, X, C');
 
-    if(cursors.right.isDown) {
-      player1.setVelocityX(300);
-      player1.anims.play('p1front');
-    }else if(cursors.left.isDown){
-      player1.anims.play('p1back');
-      player1.setVelocityX(-300);
-    }else if(keys.D.isDown){
-      player1.setVelocityX(0);
+
+    if (player1.anims.isPlaying) {
+    }else if(Phaser.Input.Keyboard.JustDown(keys.D)) {
       player1.anims.play('p1punch');
-    }else if(keys.C.isDown){
-      player1.setVelocityX(0);
+    }else if(Phaser.Input.Keyboard.JustDown(keys.C)){
       player1.anims.play('p1kick');
     }
 
-    if (keys.O.isDown) {
-      player2.setVelocityX(-300);
-      player2.anims.play('p2front');
-    }else if (keys.P.isDown){
-      player2.setVelocityX(300);
-      player2.anims.play('p2back');
-    }else if (keys.I.isDown){
-      player2.setVelocityX(0);
+    if (player2.anims.isPlaying){
+    }else if(Phaser.Input.Keyboard.JustDown(keys.Z)){
       player2.anims.play('p2punch');
-    }else if(keys.K.isDown){
-      player2.setVelocityX(0);
+    }else if(Phaser.Input.Keyboard.JustDown(keys.X)){
       player2.anims.play('p2kick');
     }
 
   }
+
+  function p1damage(e) {
+    p1health -= 2;
+    console.log(p1health);
+
+    if (p1health < 50 && p1health >= 25) {
+      player1.tint = 0xff6666;
+    }else if(p1health < 25 && p1health >= 15) {
+      player1.tint = 0xff3333;
+    }else if (p1health < 15){
+      player1.tint = 0xff0000;
+    }
+  }
+  function p2damage() {
+    p2health -= 2;
+    console.log(p2health);
+    if (p2health < 50 && p2health >= 25) {
+      player2.tint = 0xff6666;
+    }else if(p2health < 25 && p2health >= 15) {
+      player2.tint = 0xff3333;
+    }else if (p2health < 15){
+      player2.tint = 0xff0000;
+    }
+  }
+
+
+
+
 </script>
