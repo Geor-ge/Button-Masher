@@ -15,9 +15,13 @@
  */
  body{
    margin: 0;
+   background-image: url('pattern-white.png');
+   background-size: cover;
+   background-repeat: no-repeat;
  }
 
- #arena{
-   display: grid;
-   justify-content: center;
+ canvas{
+   position: absolute;
+   top: 1%;
+   left: 16%;
  }

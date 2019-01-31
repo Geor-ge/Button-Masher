@@ -201,9 +201,8 @@
     });
 
 
-
-    player1.on('animationcomplete', p2damage)
-    player2.on('animationcomplete', p1damage)
+    player1.on('animationcomplete', p2damage);
+    player2.on('animationcomplete', p1damage);
   }
 
 
@@ -251,7 +250,7 @@
     }else if (p1health < 15 && p1health > 0){
       player1.tint = 0xff0000;
     }else if(p1health <= 0){
-      alert('Player 2 WINS!')
+      alert('Player 2 WINS!');
     }
   }
   function p2damage() {
