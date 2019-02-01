@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'chats/show'
-  root 'pages#home'
+  root 'pages#arena'
 
   devise_for :players, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
 
