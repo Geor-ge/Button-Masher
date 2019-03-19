@@ -15,7 +15,7 @@
  */
  body{
    margin: 0;
-   background-image: url('pattern-white.png');
+   background: url('pattern-white.png');
    background-size: cover;
    background-repeat: no-repeat;
  }
